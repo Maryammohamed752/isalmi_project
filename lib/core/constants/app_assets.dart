@@ -1,0 +1,30 @@
+class AppAssets {
+  static String hadithBg = "assets/images/hadith_bg.png";
+  static String quranBg = "assets/images/quran_bg.png";
+  static String radioBg = "assets/images/radio_bg.png";
+  static String splashBg = "assets/images/splash_bg.png";
+  static String splashBrand = "assets/images/splash_brand.png";
+  static String splashGlow = "assets/images/splash_glow.png";
+  static String splashLeftShape = "assets/images/splash_left_shape.png";
+  static String splashLogo = "assets/images/splash_logo.png";
+  static String splashRightShape = "assets/images/splash_right_shape.png";
+  static String timeBg = "assets/images/time_bg.png";
+  static String hadithIcn = "assets/icons/hadith.png";
+  static String quranIcn = "assets/icons/quran.png";
+  static String radioIcn = "assets/icons/radio.png";
+  static String sebhaIcn = "assets/icons/sebha.png";
+  static String timesIcn = "assets/icons/times.png";
+  static String welcomePg = "assets/images/welcome.png";
+  static String welcome1Pg = "assets/images/welcome_1.png";
+  static String welcomeQuran = "assets/images/welcome_quran.png";
+  static String welcomeRadio = "assets/images/welcome_radio.png";
+  static String logo = "assets/images/logo.png";
+  static String sbhaBg = "assets/images/sbha_bg.png";
+  static String prefixIcon = "assets/images/prefix_icon.png";
+  static String mostRecently = "assets/images/most_recently.png";
+  static String suraDetailsScreen = "assets/images/sura_details_screen.png";
+  static String sebhaHead = "assets/images/sebha_head.png";
+  static String sebhaBody = "assets/images/sebha_body.png";
+  static String hadithCard = "assets/images/hadith_card.png";
+  static String hadithLogo = "assets/images/hadith_logo.png";
+}
