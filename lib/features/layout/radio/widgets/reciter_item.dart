@@ -1,18 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:project_islami/core/theme/app_colors.dart';
 import 'package:project_islami/models/radio_response_model.dart';
+import 'package:project_islami/models/reciters_response_model.dart';
 import 'package:project_islami/provider/radio_manager_provider.dart';
 import 'package:provider/provider.dart';
 
-class RadioItem extends StatefulWidget {
-  RadioItem({super.key, required this.model});
+class ReciterItem extends StatefulWidget {
+  ReciterItem({super.key, required this.model});
 
-  final Radios model;
+  final Reciters model;
+
   @override
-  State<RadioItem> createState() => _RadioItemState();
+  State<ReciterItem> createState() => _ReciterItemState();
 }
 
-class _RadioItemState extends State<RadioItem> {
+String? url;
+
+class _ReciterItemState extends State<ReciterItem> {
+  @override
+  void initState() {
+    getUrl();
+    // TODO: implement initState
+    super.initState();
+  }
+
+  void getUrl() {
+    url = "${widget.model.moshaf![0].server}112.mp3";
+  }
+
   bool isPlay = true;
 
   bool isFavourite = false;
@@ -78,7 +93,7 @@ class _RadioItemState extends State<RadioItem> {
                       ),
                       IconButton(
                           onPressed: () {
-                            provider.play(widget.model.url!);
+                            provider.play(url!);
                             //// isPlay = !isPlay;
                             //setState(() {});
                           },
@@ -86,7 +101,7 @@ class _RadioItemState extends State<RadioItem> {
                               //isPlay
                               //?
                               Icon(
-                            provider.currentPlayingUrl == widget.model.url &&
+                            provider.currentPlayingUrl == url! &&
                                     provider.isPlaying!
                                 ? Icons.pause
                                 : Icons.play_arrow,
@@ -98,8 +113,7 @@ class _RadioItemState extends State<RadioItem> {
                       ),
                       IconButton(
                           onPressed: () {
-                            if (provider.currentPlayingUrl ==
-                                widget.model.url) {
+                            if (provider.currentPlayingUrl == url!) {
                               provider.stop();
                             }
                           },
@@ -132,7 +146,6 @@ class _RadioItemState extends State<RadioItem> {
           ),
         );
       },
-      // child: ,
     );
   }
 }

@@ -4,11 +4,14 @@ import 'package:project_islami/features/layout/pages/layout_page.dart';
 import 'package:project_islami/features/layout/quran/quran_details_view.dart';
 import 'package:project_islami/features/onboarding/pages/onboarding_page.dart';
 import 'package:project_islami/features/splash/pages/splash_page.dart';
+import 'package:project_islami/provider/radio_manager_provider.dart';
+import 'package:provider/provider.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await LocalStorageServices.init();
-  runApp(const MyApp());
+  runApp(ChangeNotifierProvider(
+      create: (context) => RadioManagerProvider(), child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
